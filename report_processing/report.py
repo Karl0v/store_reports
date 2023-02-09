@@ -6,6 +6,7 @@ class Report:
         self.qty_column = qty_column
         self.name_of_column = name_of_column
         self.width_of_column = list()
+        self.rows = list()
 
     def read_report(self):
         """
@@ -13,5 +14,7 @@ class Report:
         :return:
         """
         pass
+
+
 
 

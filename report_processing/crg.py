@@ -1,7 +1,7 @@
 import datetime
 
-class CRG:
 
+class CRG:
     def __init__(
             self,
             data: datetime.date,
@@ -9,7 +9,7 @@ class CRG:
             invoice_number: str,
             weight: float,
             sender: str,
-            recepient: str,
+            recipient: str,
             cost_of_delivery: float,
             purchase_cost: float):
         self.data = data
@@ -17,6 +17,6 @@ class CRG:
         self.invoice_number = invoice_number
         self.weight = weight
         self.sender = sender
-        self.recepient = recepient
+        self.recipient = recipient
         self.cost_of_delivery = cost_of_delivery
         self.purchase_cost = purchase_cost
