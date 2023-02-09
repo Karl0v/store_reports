@@ -22,16 +22,13 @@ class CRGReport(Report):
                     data=datetime.datetime.strptime(row['date'], '%d-%b-%Y').date(),
                     time=datetime.datetime.strptime(row['time'], '%H:%M:%S').time(),
                     invoice_number=str(row['invoice']),
-                    weight=float(row['wight']),
+                    weight=float(row['weight']),
                     sender=str(row['from']),
                     recipient=str(row['warehouse']),
                     cost_of_delivery=float(row['delivery_cost']),
                     purchase_cost=float(row['purchase_cost'])
                     )
 
-                """{'date': '16-Dec-2022', 'time': '18:07:21', 'invoice': '14291824', 'weight': '43.4', 'from': 'City D', 'warehouse': 'A39', 'delivery_cost': '49.23', 'purchase_cost': '27788.36'}
-{'date': '16-Dec-2022', 'time': '19:47:44', 'invoice': '07805266', 'weight': '6.4', 'from': 'A32', 'warehouse': 'C22', 'delivery_cost': '225.32', 'purchase_cost': '0.00'}
-{'date': '18-Dec-2022', 'time': '23:05:01', 'invoice': '00045123', 'weight': '9.0', 'from': 'D5', 'warehouse': 'B14', 'delivery_cost': '332.34', 'purchase_cost': '0.00'}
-"""
+"""{'date': '16-Dec-2022', 'time': '18:07:21', 'invoice': '14291824', 'weight': '43.4', 'from': 'City D', 'warehouse': 'A39', 'delivery_cost': '49.23', 'purchase_cost': '27788.36'}"""
 
 

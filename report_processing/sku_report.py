@@ -1,7 +1,8 @@
 from .report import Report
 import datetime
 import csv
-from
+from .sku import SKU
+
 
 class SKUReport(Report):
 
@@ -10,7 +11,7 @@ class SKUReport(Report):
 
     def read_report(self):
         """
-        Читает файл CRG report типа CSV
+        Читает файл SKU report типа CSV
         на каждый ряд в отчете создает обьект типа SKU и хранит его
         задает поле width_of_column
         :return:
@@ -18,4 +19,15 @@ class SKUReport(Report):
         with open(self.file_name, newline='') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
             for row in reader:
-                S(
+                SKU(
+                    data=datetime.datetime.strptime(row['date'], '%d-%b-%Y').date(),
+                    time=datetime.datetime.strptime(row['time'], '%H:%M:%S').time(),
+                    sku=str(row['sku']),
+                    warehouse=str(row['warehouse']),
+                    warehouse_cell_id=str(row['warehouse_cell_id']),
+                    operation=str(row['operation']),
+                    invoice=str(row['invoice']),
+                    expiration_date=datetime.datetime.strptime(row['expiration_date'], '%d-%b-%Y').date(),
+                    operation_cost=float(row['operation_cost']),
+                    comment=str(row['comment'])
+                )
