@@ -16,10 +16,11 @@ class SKUReport(Report):
         задает поле width_of_column
         :return:
         """
+        skus = list()
         with open(self.file_name, newline='') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
             for row in reader:
-                SKU(
+                self.rows.append(SKU(
                     data=datetime.datetime.strptime(row['date'], '%d-%b-%Y').date(),
                     time=datetime.datetime.strptime(row['time'], '%H:%M:%S').time(),
                     sku=str(row['sku']),
@@ -30,4 +31,6 @@ class SKUReport(Report):
                     expiration_date=datetime.datetime.strptime(row['expiration_date'], '%d-%b-%Y').date(),
                     operation_cost=float(row['operation_cost']),
                     comment=str(row['comment'])
-                )
+                ))
+
+        return self.rows

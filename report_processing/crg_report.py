@@ -15,10 +15,11 @@ class CRGReport(Report):
         задает поле width_of_column
         :return:
         """
+        crgs = []
         with open(self.file_name, newline='') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
             for row in reader:
-                CRG(
+                self.rows.append(CRG(
                     data=datetime.datetime.strptime(row['date'], '%d-%b-%Y').date(),
                     time=datetime.datetime.strptime(row['time'], '%H:%M:%S').time(),
                     invoice_number=str(row['invoice']),
@@ -27,7 +28,9 @@ class CRGReport(Report):
                     recipient=str(row['warehouse']),
                     cost_of_delivery=float(row['delivery_cost']),
                     purchase_cost=float(row['purchase_cost'])
-                    )
+                    ))
+
+        return self.rows
 
 """{'date': '16-Dec-2022', 'time': '18:07:21', 'invoice': '14291824', 'weight': '43.4', 'from': 'City D', 'warehouse': 'A39', 'delivery_cost': '49.23', 'purchase_cost': '27788.36'}"""
 
