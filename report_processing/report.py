@@ -1,3 +1,7 @@
+
+
+
+
 class Report:
 
 
@@ -25,28 +29,24 @@ class Report:
 
 
     def convert_to_txt(self, txt_filename: str):
+        header_columns = list()
         """
         Создаем текстовый файл опираясь на значения self.rows,
         формат записи колонок определяется остальными атрибутами класса
         :param txt_filename: файл в который будем записывать данне
         :return:
         """
-        with open(txt_filename, 'w') as txt_file:
-            header_columns = list()
-            for name, width in zip(self.name_of_column, self.width_of_column):
-                header_columns.append(name + ((width - len(name))*' '))
-            txt_file.write('|'.join(header_columns) + '\n')
+        #Создает список header_columns, который будет содержать названия всех колонок таблицы, а также добавляет пробелы для каждой колонки, чтобы каждая колонка была одинаковой ширины.
+        for name, width in zip(self.name_of_column, self.width_of_column):
+            header_columns.append(name + ((width - len(name))*' '))
+        with open(txt_filename, 'w') as txt_file: #Открывает новый текстовый файл для записи
+            txt_file.write('|'.join(header_columns) + '\n') #Записывает заголовки колонок в первой строке файла, разделяя каждую колонку символом |:
             for entry in self.rows:
                 row_columns = list()
-
-                for name, width in zip(self.name_of_column, self.width_of_column):
+                for name, width in zip(self.name_of_column, self.width_of_column): #Создает список, который будет содержать данные всех колонок таблицы, а также добавляет пробелы для каждой колонки, чтобы каждая колонка была одинаковой ширины.
                     col_value = entry.raw[name]
                     row_columns.append(str(col_value) + ((width - len(col_value))*' '))
-                txt_file.write('|'.join(row_columns) + '\n')
-
-
-
-
+                txt_file.write('|'.join(row_columns) + '\n') #Записывает данные колонок, разделяя каждую колонку символом |:
 
 
 
