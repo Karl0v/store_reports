@@ -14,7 +14,8 @@ class SKU:
             invoice: str,
             expiration_date: datetime.date,
             operation_cost: float,
-            comment: str
+            comment: str,
+            raw: dict
             ):
         self.data = data
         self.time = time
@@ -26,4 +27,5 @@ class SKU:
         self.expiration_date = expiration_date
         self.operation_cost = operation_cost
         self.comment = comment
+        self.raw = raw
 

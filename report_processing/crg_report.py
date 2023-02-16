@@ -15,7 +15,7 @@ class CRGReport(Report):
         задает поле width_of_column
         :return:
         """
-        crgs = []
+
         with open(self.file_name, newline='') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
             for row in reader:
@@ -27,9 +27,11 @@ class CRGReport(Report):
                     sender=str(row['from']),
                     recipient=str(row['warehouse']),
                     cost_of_delivery=float(row['delivery_cost']),
-                    purchase_cost=float(row['purchase_cost'])
+                    purchase_cost=float(row['purchase_cost']),
+                    raw=row
                     ))
-
+        # вызываем с родительского класса метод read_report
+        super().read_report()
         return self.rows
 
 """{'date': '16-Dec-2022', 'time': '18:07:21', 'invoice': '14291824', 'weight': '43.4', 'from': 'City D', 'warehouse': 'A39', 'delivery_cost': '49.23', 'purchase_cost': '27788.36'}"""

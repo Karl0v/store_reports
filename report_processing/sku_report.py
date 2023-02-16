@@ -16,7 +16,7 @@ class SKUReport(Report):
         задает поле width_of_column
         :return:
         """
-        skus = list()
+
         with open(self.file_name, newline='') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
             for row in reader:
@@ -30,7 +30,9 @@ class SKUReport(Report):
                     invoice=str(row['invoice']),
                     expiration_date=datetime.datetime.strptime(row['expiration_date'], '%d-%b-%Y').date(),
                     operation_cost=float(row['operation_cost']),
-                    comment=str(row['comment'])
+                    comment=str(row['comment']),
+                    raw=row
                 ))
-
+        # вызываем с родительского класса метод read_report
+        super().read_report()
         return self.rows

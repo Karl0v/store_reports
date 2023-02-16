@@ -11,7 +11,9 @@ class CRG:
             sender: str,
             recipient: str,
             cost_of_delivery: float,
-            purchase_cost: float):
+            purchase_cost: float,
+            raw: dict
+    ):
         self.data = data
         self.time = time
         self.invoice_number = invoice_number
@@ -20,3 +22,4 @@ class CRG:
         self.recipient = recipient
         self.cost_of_delivery = cost_of_delivery
         self.purchase_cost = purchase_cost
+        self.raw = raw
