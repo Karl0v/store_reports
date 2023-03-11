@@ -11,7 +11,7 @@ class CRGReport(Report):
     def read_report(self):
         """
         Читает файл CRG report типа CSV
-        на каждый ряд в отчете создает обьект типа CRG и хранит его
+        на каждый ряд в отчете создает обьект типа CRG и хранит его в self.row
         задает поле width_of_column
         :return:
         """
