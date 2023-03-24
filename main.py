@@ -16,8 +16,9 @@ if __name__ == '__main__':
     print(y.read_report())
     y.convert_to_txt('reports/output/sku.txt')
 
+    print('expiration report')
     expiaration_date_analize(y.rows)
-    operations_analize(y.rows)
+    #operations_analize(y.rows)
 
 
 

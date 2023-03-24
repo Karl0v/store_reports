@@ -240,7 +240,6 @@ date,time,sku,warehouse,warehouse_cell_id,operation,invoice,expiration_date,oper
 06-Nov-2022,13:28:24,PX9364,D44,9998,move,50630350,13-Jul-2023,-478.80,
 07-Nov-2022,18:59:59,LZ9606,A39,7489,first_arrival,73403713,02-Feb-2023,-39710.80,operation_cost = purchase_cost + delivery_cost
 07-Nov-2022,18:59:59,ZH6449,A39,9113,first_arrival,73403713,30-Apr-2023,-39710.80,operation_cost = purchase_cost + delivery_cost
-07-Nov-2022,18:59:59,OT2185,A39,7437,first_arrival,73403713,24-Mar-2023,-39710.80,operation_cost = purchase_cost + delivery_cost
 09-Nov-2022,12:25:56,SR5151,C22,9890,move,82200890,30-Jul-2023,-426.65,necessary action
 09-Nov-2022,23:58:12,YI7422,A25,2640,move,07646358,24-Mar-2023,-471.21,moving YI7422 from A48:8667 to A25:2640 under 07646358 invoice
 11-Nov-2022,09:55:36,YS7348,B14,7493,move,88878041,27-May-2022,-402.57,
@@ -300,7 +299,6 @@ date,time,sku,warehouse,warehouse_cell_id,operation,invoice,expiration_date,oper
 11-Dec-2022,23:32:41,BA7793,D44,9552,move,18366199,04-Mar-2023,-181.15,moving BA7793 from A39:5497 to D44:9552 under 18366199 invoice
 12-Dec-2022,05:22:50,TZ2232,D5,0891,move,79680079,20-Feb-2023,-340.26,
 13-Dec-2022,16:29:41,WH1492,D44,1268,move,33859499,07-Jul-2023,-352.16,necessary action
-14-Dec-2022,10:08:38,VR9498,D5,5910,sale,48658435,01-Apr-2023,569.21,
 14-Dec-2022,21:36:05,XV7715,A32,3924,sale,18698220,28-Feb-2023,9921.56,
 16-Dec-2022,18:07:21,KH2664,A39,8633,first_arrival,14291824,12-Jan-2023,-27837.59,
 16-Dec-2022,18:07:21,JO8074,A39,3175,first_arrival,14291824,04-Aug-2023,-27837.59,operation_cost = purchase_cost + delivery_cost
@@ -327,7 +325,6 @@ date,time,sku,warehouse,warehouse_cell_id,operation,invoice,expiration_date,oper
 26-Dec-2022,19:07:55,EG6196,B14,3112,dispose,00045123,24-Dec-2022,-5.87,it stinks
 29-Dec-2022,00:19:54,XL8594,A48,9726,move,49749157,23-Aug-2022,-423.63,moving XL8594 from A25:4551 to A48:9726 under 49749157 invoice
 29-Dec-2022,04:02:44,FB2500,D5,2515,move,00418156,16-Jul-2023,-360.84,moving FB2500 from A32:1974 to D5:2515 under 00418156 invoice
-29-Dec-2022,10:19:22,YI7422,A25,2640,sale,07646358,24-Mar-2023,11452.14,
 29-Dec-2022,16:57:08,PX9364,D44,9998,sale,50630350,13-Jul-2023,14553.84,finally
 30-Dec-2022,07:46:19,WS1660,D44,1981,move,86466532,19-Mar-2023,-425.14,
 30-Dec-2022,14:55:43,HR1939,D5,5711,move,65746049,13-Jun-2023,-358.37,necessary action
@@ -371,7 +368,6 @@ date,time,sku,warehouse,warehouse_cell_id,operation,invoice,expiration_date,oper
 11-Jan-2023,12:00:12,EF2880,D44,5341,move,82796995,20-Mar-2023,-135.83,moving EF2880 from B14:2945 to D44:5341 under 82796995 invoice
 11-Jan-2023,15:33:02,BA7793,D5,6815,move,50633469,04-Mar-2023,-308.93,
 12-Jan-2023,01:05:37,ZI5833,D5,8673,move,09169919,28-Apr-2023,-468.63,necessary action
-12-Jan-2023,06:37:30,ZQ7189,D5,9295,sale,84349272,31-Mar-2023,17499.84,yay
 13-Jan-2023,15:20:09,QZ2728,A25,1652,sale,24058716,24-May-2023,11513.18,
 13-Jan-2023,16:56:26,CB0425,C22,9134,move,89412586,23-Apr-2023,-241.45,moving CB0425 from A32:9472 to C22:9134 under 89412586 invoice
 13-Jan-2023,20:26:49,JV6471,D44,7107,move,64685250,15-May-2023,-432.81,moving JV6471 from A32:3794 to D44:7107 under 64685250 invoice
@@ -464,7 +460,6 @@ date,time,sku,warehouse,warehouse_cell_id,operation,invoice,expiration_date,oper
 29-Jan-2023,07:08:05,AO4890,A25,0144,sale,21147108,26-Apr-2023,6681.91,yay
 29-Jan-2023,07:24:47,ZC7147,A25,3137,move,93551950,14-Jun-2022,-447.93,moving ZC7147 from D5:0869 to A25:3137 under 93551950 invoice
 29-Jan-2023,10:56:33,YS7348,C22,8861,dispose,68042386,27-May-2022,-435.63,:`(
-29-Jan-2023,15:40:35,ZG0071,C22,3573,sale,87936373,01-Apr-2023,23904.63,
 29-Jan-2023,17:38:19,SB9302,A39,0391,move,94882596,19-Feb-2023,-287.33,moving SB9302 from A48:7645 to A39:0391 under 94882596 invoice
 29-Jan-2023,18:24:52,OS5125,B3,1700,move,41739229,16-Feb-2023,-202.19,moving OS5125 from D5:7783 to B3:1700 under 41739229 invoice
 29-Jan-2023,18:40:01,HR1939,A48,0979,sale,34127996,13-Jun-2023,25846.97,yay
@@ -588,7 +583,6 @@ date,time,sku,warehouse,warehouse_cell_id,operation,invoice,expiration_date,oper
 05-Feb-2023,23:34:12,ML6115,B14,8359,sale,41857496,27-Jun-2023,10353.58,
 05-Feb-2023,23:58:41,QD5535,C22,2233,sale,17991423,15-Apr-2023,20880.53,
 06-Feb-2023,00:27:25,WH1492,A32,8398,sale,53948589,07-Jul-2023,2018.78,
-06-Feb-2023,00:40:46,LK7373,B14,3698,sale,10195227,26-Mar-2023,11960.51,finally
 06-Feb-2023,01:40:26,DF3451,D44,7424,sale,52558087,02-Apr-2023,7352.16,yay
 06-Feb-2023,02:01:37,UU9362,A32,7615,dispose,06783735,22-Dec-2022,-246.45,unfortunate
 06-Feb-2023,03:53:25,LV3989,A32,2933,sale,26846071,21-May-2023,27272.37,finally
@@ -636,7 +630,6 @@ date,time,sku,warehouse,warehouse_cell_id,operation,invoice,expiration_date,oper
 06-Feb-2023,18:49:03,PH6919,D44,4518,move,80949179,28-Jun-2023,-224.05,moving PH6919 from C22:1679 to D44:4518 under 80949179 invoice
 06-Feb-2023,18:49:03,PH6919,D44,4518,sale,80949179,28-Jun-2023,24269.74,
 06-Feb-2023,18:49:03,DC4915,A48,6564,sale,91450007,05-Mar-2023,7494.25,
-06-Feb-2023,18:49:03,NQ1402,B3,4902,sale,89892723,24-Mar-2023,1772.17,finally
 06-Feb-2023,18:49:03,QY4578,D44,5974,move,65374715,05-Jun-2023,-279.99,moving QY4578 from D5:4791 to D44:5974 under 65374715 invoice
 06-Feb-2023,18:49:03,QY4578,D5,5999,move,68451338,05-Jun-2023,-188.54,moving QY4578 from D44:5974 to D5:5999 under 68451338 invoice
 06-Feb-2023,18:49:03,QY4578,D5,5999,sale,68451338,05-Jun-2023,5113.80,
