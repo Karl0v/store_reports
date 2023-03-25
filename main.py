@@ -2,6 +2,7 @@ from report_processing import CRGReport
 from report_processing import SKUReport
 from report_analizing import expiaration_date_analize
 from report_analizing import operations_analize
+from report_analizing import sale_analize
 
 
 
@@ -19,7 +20,7 @@ if __name__ == '__main__':
     print('expiration report')
     expiaration_date_analize(y.rows)
     #operations_analize(y.rows)
-
+    sale_analize(y.rows)
 
 
 

@@ -46,3 +46,14 @@ SKU
 
 
 В дальнейшем на автоматизацию так же могут направить и другие отчеты, поэтому программное решение должно быть открытым к изменениям.
+
+
+Отчёт о продажах SKU:
+
+- SKU
+- Warehouse
+- Warehouse cell ID
+- Sale date
+- First arrival date
+- Sell cost
+- Cost of transportation (all operation sum except first arrival)
