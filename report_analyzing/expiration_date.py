@@ -4,7 +4,7 @@ from typing import List
 import csv
 
 
-def expiaration_date_analize(sku_rows: List[SKU]):
+def expiaration_date_analyze(sku_rows: List[SKU]):
     # получаем текущую дату
     start_date = datetime.today().date()
 
@@ -45,7 +45,7 @@ def expiaration_date_analize(sku_rows: List[SKU]):
             }
             expiration_report.append(report_row)
     # записываем данные в CSV-файл
-    csv_file = 'report_analizing/expiration_report.csv'
+    csv_file = 'report_analyzing/expiration_report.csv'
     with open(csv_file, 'w', newline='') as csvfile:
         headers = ['Expiration date', 'SKU', 'Warehouse', 'Warehouse cell ID', 'Last operation date', 'First arrival date']
         writer = csv.DictWriter(csvfile, fieldnames=headers)

@@ -1,3 +1,0 @@
-from .expiration_date import expiaration_date_analize
-from .operations_report import operations_analize
-from .sale_analize import sale_analize

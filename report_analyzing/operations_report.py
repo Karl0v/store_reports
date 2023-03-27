@@ -3,7 +3,7 @@ from typing import List
 from datetime import datetime, timedelta
 
 
-def operations_analize(sku_rows: List[SKU]):
+def operations_analyze(sku_rows: List[SKU]):
     operations = ['sale', 'first_arrival', 'dispose', 'move']
     days = [1, 3, 6, 12]
     today = datetime.today().date()
