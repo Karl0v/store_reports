@@ -9,16 +9,19 @@ class Report:
 
     def read_report(self):
         """
-        Читает файл из self.file_name и задает поле width_of_column, rows заполняется в наследниках
+        задает поле width_of_column, rows заполняется в наследниках
         :return:
         """
-
+        print('')
         for i in range(self.qty_column):
             name = self.name_of_column[i]
             list_of_column_values = list()
             list_of_column_values.append(self.name_of_column[i])
             for entry in self.rows:
-                list_of_column_values.append(entry.raw[name])
+                if isinstance(entry, dict):
+                    list_of_column_values.append(entry[name])
+                else:
+                    list_of_column_values.append(entry.raw[name])
             self.width_of_column.append(len(max(list_of_column_values, key=len)))
 
     def convert_to_txt(self, txt_filename: str):
@@ -41,7 +44,11 @@ class Report:
                 # Создает список, который будет содержать данные всех колонок таблицы, а также добавляет пробелы
                 # для каждой колонки, чтобы каждая колонка была одинаковой ширины.
                 for name, width in zip(self.name_of_column,self.width_of_column):
-                    col_value = entry.raw[name]
-                    row_columns.append(str(col_value) + ((width - len(col_value)) * ' '))
+                    if isinstance(entry, dict):
+                        col_value = entry[name]
+                    else:
+                        col_value = entry.raw[name]
+                    row_columns.append(str(col_value) + ((width - len(str(col_value))) * ' '))
+                    # при конвертации в sale_report выдавало ошибку так как переменная operation_cost есть float, обернул так str(col_value)
                 txt_file.write(
                     '|'.join(row_columns) + '\n')  # Записывает данные колонок, разделяя каждую колонку символом |:

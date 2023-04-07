@@ -11,8 +11,10 @@ class SaleReport(Report):
         self.sku_rows = sku_rows
 
     def read_report(self):
+
+        #self.write_to_csv()
+        super().read_report()
         self._analyze_sale()
-        self.write_to_csv()
 
     def _analyze_sale(self):
         # создаем пустой словарь, в котором будем хранить все операции для каждого SKU
@@ -24,7 +26,7 @@ class SaleReport(Report):
             # добавляем в найденую операцию для соответствующего SKU в список
             sku_dict[row.sku].append(row)
         # создаем пустой список для отчета о продажах
-        self.sale_report = []
+        #self.sale_report = []
         # для каждого SKU из словаря sku_dict и соответствующего ему списка операций ...
         for key, value in sku_dict.items():
             # ... получаем последнюю операция которая была sale
@@ -43,7 +45,8 @@ class SaleReport(Report):
                     'Operation_cost': last_operation.operation_cost,
                     'Cost of transportation': transportation_cost
                 }
-                self.sale_report.append(report_row)
+                #self.sale_report.append(report_row)
+                self.rows.append(report_row)
 
     def write_to_csv(self):
         # записывам всю полученую информацию в файл формата csv
@@ -53,5 +56,5 @@ class SaleReport(Report):
                        'Cost of transportation']
             writer = csv.DictWriter(csvfile, fieldnames=headers)
             writer.writeheader()
-            for row in self.sale_report:
+            for row in self.rows:#было self.sale_report
                 writer.writerow(row)

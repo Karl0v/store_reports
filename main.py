@@ -17,14 +17,16 @@ if __name__ == '__main__':
     print(y.read_report())
     y.convert_to_txt('reports/output/sku.txt')
 
-    print('expiration report')
+    #print('expiration report')
     #expiaration_date_analyze(y.rows)
     #operations_analize(y.rows)
     #sale_analyze(y.rows)
 
     q = ExpirationReport(y.rows)
     print(q.read_report())
+    q.convert_to_txt('reports/output/expiration.txt')
     w = SaleReport(y.rows)
     print(w.read_report())
+    w.convert_to_txt('reports/output/sale.txt')
 
 

@@ -10,12 +10,14 @@ class ExpirationReport(Report):
         super().__init__('', qty_column=6, name_of_column=['Expiration date', 'SKU', 'Warehouse', 'Warehouse cell ID',
                                                            'Last operation date', 'First arrival date'])
         self.sku_rows = sku_rows
-        self.start_date = star_date
+        #fixme вернуть присвоение входного параметра на start_date
+        self.start_date = date(2023, 3, 26)
         self.end_date = self.start_date + timedelta(days=warning_period_days)
 
     def read_report(self):
         self._analyze_data()
-        self.write_to_csv()
+        super().read_report()
+
 
     def _analyze_data(self):
         # создаем словарь, где ключом является SKU, а значением - список операций по этому SKU
