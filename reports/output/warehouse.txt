@@ -1,0 +1,10 @@
+Warehouse ID|Qty SKU|Sale|Dispose|Max Cell_ID|First arrival
+B14         |64     |21  |10     |           |None         
+A25         |41     |12  |10     |           |None         
+D44         |55     |21  |3      |           |None         
+A48         |56     |22  |7      |           |None         
+A39         |53     |13  |6      |           |None         
+A32         |67     |15  |10     |           |None         
+D5          |42     |13  |1      |           |None         
+C22         |40     |16  |5      |           |None         
+B3          |34     |8   |0      |           |None         
