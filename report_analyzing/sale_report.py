@@ -11,10 +11,10 @@ class SaleReport(Report):
         self.sku_rows = sku_rows
 
     def read_report(self):
-
+        self._analyze_sale()
         #self.write_to_csv()
         super().read_report()
-        self._analyze_sale()
+
 
     def _analyze_sale(self):
         # создаем пустой словарь, в котором будем хранить все операции для каждого SKU
@@ -33,7 +33,7 @@ class SaleReport(Report):
             last_operation = value[-1]
             if last_operation.operation == 'sale':
                 # Создаем список всех трат на транспортировку товара кроме первой и последней операции
-                transportation_cost = [operation.operation_cost + 0 for operation in value[1:-1]]
+                transportation_cost = round(sum([operation.operation_cost + 0 for operation in value[1:-1]]),2)
                 # добавляем информацию о продаже и затратах на транспортировку в отчет
                 first_operation = value[0]
                 report_row = {
@@ -43,10 +43,13 @@ class SaleReport(Report):
                     'Sale date': last_operation.data.strftime('%d-%b-%Y'),
                     'First arrival date': first_operation.data.strftime('%d-%b-%Y'),
                     'Operation_cost': last_operation.operation_cost,
-                    'Cost of transportation': transportation_cost
+                    'Cost of transportation': f'{transportation_cost:.2f}',
+                    'sale_date_for_sort': last_operation.data
+
                 }
                 #self.sale_report.append(report_row)
                 self.rows.append(report_row)
+        self.rows.sort(key=lambda x: x['sale_date_for_sort'])
 
     def write_to_csv(self):
         # записывам всю полученую информацию в файл формата csv

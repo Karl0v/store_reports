@@ -2,7 +2,7 @@ from report_processing import CRGReport
 from report_processing import SKUReport
 from report_analyzing import expiaration_date_analyze
 from report_analyzing import operations_analyze
-from report_analyzing import sale_analyze, ExpirationReport, SaleReport
+from report_analyzing import sale_analyze, ExpirationReport, SaleReport, WarehauseAnalyze
 
 
 
@@ -22,11 +22,14 @@ if __name__ == '__main__':
     #operations_analize(y.rows)
     #sale_analyze(y.rows)
 
-    q = ExpirationReport(y.rows)
-    print(q.read_report())
-    q.convert_to_txt('reports/output/expiration.txt')
-    w = SaleReport(y.rows)
-    print(w.read_report())
-    w.convert_to_txt('reports/output/sale.txt')
+    #q = ExpirationReport(y.rows)
+    #print(q.read_report())
+    #q.convert_to_txt('reports/output/expiration.txt')
+    #w = SaleReport(y.rows)
+    #print(w.read_report())
+    #w.convert_to_txt('reports/output/sale.txt')
+    s = WarehauseAnalyze(y.rows)
+    print(s.read_report())
+    s.convert_to_txt('reports/output/warehouse.txt')
 
 

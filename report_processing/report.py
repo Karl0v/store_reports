@@ -19,7 +19,7 @@ class Report:
             list_of_column_values.append(self.name_of_column[i])
             for entry in self.rows:
                 if isinstance(entry, dict):
-                    list_of_column_values.append(entry[name])
+                    list_of_column_values.append(str(entry[name]))
                 else:
                     list_of_column_values.append(entry.raw[name])
             self.width_of_column.append(len(max(list_of_column_values, key=len)))
