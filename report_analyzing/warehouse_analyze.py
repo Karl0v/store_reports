@@ -17,13 +17,13 @@ class WarehauseAnalyze(Report):
         super().read_report()
 
     def _analyze_warehouse(self):
-        sku_dict = dict()
+        warehouse_id_dict = dict()
         for row in self.sku_rows:
-            if row.warehouse not in sku_dict:
-                sku_dict[row.warehouse] = []
-            sku_dict[row.warehouse].append(row)
-        #print(sku_dict)
-        for key, value in sku_dict.items():
+            if row.warehouse not in warehouse_id_dict:
+                warehouse_id_dict[row.warehouse] = []
+            warehouse_id_dict[row.warehouse].append(row)
+        #print(warehouse_id_dict)
+        for key, value in warehouse_id_dict.items():
             total_qty = 0
             total_sale = 0
             total_dispose = 0
@@ -36,8 +36,10 @@ class WarehauseAnalyze(Report):
                     total_dispose += 1
                 else:
                     total_qty += 1
-
-
+            for row in value:
+                if row.operation == 'first_arrival':
+                    if first_arrival is None or row.data < first_arrival:
+                        first_arrival = row.data
             report_row = {
                 'Warehouse ID': key,
                 'Qty SKU': total_qty,
@@ -48,26 +50,26 @@ class WarehauseAnalyze(Report):
             }
             self.rows.append(report_row)
 
+    """def _max_cell_id(self):
+        current_load = 0
+        max_load = 0
+        loads = list()
+        for row in self.sku_rows:
+            if row.operation == 'first_arrival':
+                current_load += 1
+            elif row.operation == 'move':
+                current_load += 1
+            elif row.operation == 'sale' or row.operation == 'dispose':
+                current_load -= 1"""
 
-"""  for key, value in sku_dict.items():
-            total_qty = list()
-            total_sale = list()
-            total_dispose = list()
-            first_arrival = None
-            for row in value:                
-                total_sale.append(len(row.operation['sale']))
-                total_dispose.append(len(row.operation['dispose']))
-                if not first_arrival:
-                    first_arrival = row.operation['first_arrival'][0]
-                else:
-                    if row.operation['first_arrival'][0] < first_arrival:
-                        first_arrival = row.operation['first_arrival'][0]
-            report_row = {
-                'Warehouse ID': key,
-                'Qty SKU': total_qty,
-                'Sale': total_sale,
-                'Dispose': total_dispose,
-                'First arrival': first_arrival
-            }
-            self.rows.append(report_row)"""
+
+
+
+
+
+
+
+
+
+
 

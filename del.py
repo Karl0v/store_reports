@@ -133,3 +133,26 @@ class SaleReport(Report):
                 }
                 self.rows.append(report_row)
         self.rows.sort(key=lambda x: x['sale_date_for_sort'])
+
+
+"""  for key, value in sku_dict.items():
+            total_qty = list()
+            total_sale = list()
+            total_dispose = list()
+            first_arrival = None
+            for row in value:                
+                total_sale.append(len(row.operation['sale']))
+                total_dispose.append(len(row.operation['dispose']))
+                if not first_arrival:
+                    first_arrival = row.operation['first_arrival'][0]
+                else:
+                    if row.operation['first_arrival'][0] < first_arrival:
+                        first_arrival = row.operation['first_arrival'][0]
+            report_row = {
+                'Warehouse ID': key,
+                'Qty SKU': total_qty,
+                'Sale': total_sale,
+                'Dispose': total_dispose,
+                'First arrival': first_arrival
+            }
+            self.rows.append(report_row)"""
