@@ -1,4 +1,0 @@
-Expiration date|SKU   |Warehouse|Warehouse cell ID|Last operation date|First arrival date
-01-Apr-2023    |VR9498|D5       |5910             |03-Aug-2022        |09-Apr-2022       
-31-Mar-2023    |ZQ7189|D5       |9295             |21-Nov-2022        |20-Jun-2022       
-01-Apr-2023    |ZG0071|C22      |3573             |17-Nov-2022        |04-Nov-2022       

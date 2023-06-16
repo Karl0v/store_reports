@@ -6,13 +6,18 @@ import csv
 class ExpirationReport(Report):
 
 
-    def __init__(self, sku_rows: List[SKU], star_date: date = datetime.today().date(), warning_period_days: int = 14):
+    def __init__(self, sku_rows: List[SKU],warning_period_days: int, start_date: str = datetime.today().date()):
         super().__init__('', qty_column=6, name_of_column=['Expiration date', 'SKU', 'Warehouse', 'Warehouse cell ID',
                                                            'Last operation date', 'First arrival date'])
+        if warning_period_days <= 0:
+            raise ValueError(f'Warning days should be a positive integer, received {warning_period_days}')
+        if isinstance(start_date, str):
+            self.start_date = datetime.strptime(start_date, '%Y-%m-%d').date()
+        else:
+            self.start_date = datetime.today().date()
         self.sku_rows = sku_rows
-        #fixme вернуть присвоение входного параметра на start_date
-        self.start_date = date(2023, 3, 26)
         self.end_date = self.start_date + timedelta(days=warning_period_days)
+
 
     def read_report(self):
         self._analyze_data()

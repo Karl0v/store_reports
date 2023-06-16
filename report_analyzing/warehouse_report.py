@@ -45,22 +45,23 @@ class WarehauseAnalyze(Report):
                 'Qty SKU': total_qty,
                 'Sale': total_sale,
                 'Dispose': total_dispose,
-                'Max Cell_ID': "",
+                'Max Cell_ID': self._max_cell_id(value),
                 'First arrival': first_arrival
             }
             self.rows.append(report_row)
 
-    """def _max_cell_id(self):
+    def _max_cell_id(self, warehouse_rows: List[SKU]):
         current_load = 0
         max_load = 0
-        loads = list()
-        for row in self.sku_rows:
-            if row.operation == 'first_arrival':
+        for row in warehouse_rows:
+            if row.operation == 'first_arrival' or row.operation == 'move':
                 current_load += 1
-            elif row.operation == 'move':
-                current_load += 1
+                if current_load > max_load:
+                    max_load = current_load
             elif row.operation == 'sale' or row.operation == 'dispose':
-                current_load -= 1"""
+                current_load -= 1
+        return max_load
+
 
 
 
