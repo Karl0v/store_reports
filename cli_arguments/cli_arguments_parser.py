@@ -7,29 +7,6 @@ cli_arguments_parser = argparse.ArgumentParser(
 )
 
 cli_arguments_parser.add_argument(
-    "--crg-input-file",
-    action="store",
-    nargs="?",
-    const=None,
-    type=str,
-    choices=None,
-    required=True,
-    help="Open CRG-file",
-)
-
-cli_arguments_parser.add_argument(
-    "--crg-output-file",
-    action="store",
-    nargs="?",
-    const=None,
-    type=str,
-    choices=None,
-    required=True,
-    help="Write crg.txt file",
-
-)
-
-cli_arguments_parser.add_argument(
     "--exp-warning-days",
     action="store",
     nargs="?",
@@ -55,38 +32,27 @@ cli_arguments_parser.add_argument(
 
 )
 
+
 cli_arguments_parser.add_argument(
-    "--sku-input-file",
+    "--output-folder",
     action="store",
     nargs="?",
     const=None,
     type=str,
     choices=None,
     required=True,
-    help="Open SKU-file",
+    help="Where all reports will be saved",
+
 )
 
 cli_arguments_parser.add_argument(
-    "--sku-output-file",
+    "--source-folder",
     action="store",
     nargs="?",
     const=None,
     type=str,
     choices=None,
     required=True,
-    help="Write sku.txt file",
-
-)
-
-cli_arguments_parser.add_argument(
-    "--solar-area",
-    action="store",
-    nargs="?",
-    const=None,
-    type=int,
-    choices=None,
-    required=False,
-    default=0,
-    help="Provide square yards of solar material",
+    help="From what folder will be read",
 
 )
